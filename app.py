@@ -9,16 +9,9 @@ from flask_bcrypt import Bcrypt
 from sqlalchemy.sql import func
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SECRET_KEY'] = 'thisisasecretkey'
 db = SQLAlchemy(app)
-
-# file_path = os.path.abspath(os.getcwd())+"\database.db"
-
-# app = Flask(__name__)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'+file_path
-# app.config['SECRET_KEY'] = 'thisisasecretkey'
-# db = SQLAlchemy(app)
 
 login_manager = LoginManager()
 login_manager.init_app(app)
